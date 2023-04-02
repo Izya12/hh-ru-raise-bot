@@ -33,5 +33,5 @@ jobs:
         run: |
           python ./hh-ru-raise-bot/raise.py
         env:
-          login: ${{ secrets.login }}
-          key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
+          login: ${{ secrets.LOGIN }}
+          key: ${{ secrets.KEY }} # if run.py requires passwords..etc, set it as secrets
