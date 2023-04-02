@@ -9,7 +9,6 @@ from selenium.common.exceptions import StaleElementReferenceException
 from selenium.common.exceptions import InvalidSessionIdException
 from selenium.webdriver.edge import service
 import os
-os.system("cls") #clear screen from previous sessions
 import time
 
 options = webdriver.EdgeOptions()
