@@ -17,8 +17,8 @@ options.add_argument('headless') # that is, run in the command line only, server
 # options.add_argument("start-maximized")
 my_service=service.Service(r'msedgedriver.exe')
 options.page_load_strategy = 'eager' #do not wait for images to load
-options.add_experimental_option("detach", True)
-options.add_argument('--no-sandbox')
+# options.add_experimental_option("detach", True)
+# options.add_argument('--no-sandbox')
 #options.add_argument('--disable-dev-shm-usage') # uses disk instead of RAM, may be slow, use it if You receive "driver Run out of memory" crashed browser message
 
 s = 30 #time to wait for a single component on the page to appear, in seconds; increase it if you get server-side errors «try again later»
