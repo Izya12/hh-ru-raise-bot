@@ -21,7 +21,7 @@ options.page_load_strategy = 'eager' #do not wait for images to load
 # options.add_argument('--no-sandbox')
 #options.add_argument('--disable-dev-shm-usage') # uses disk instead of RAM, may be slow, use it if You receive "driver Run out of memory" crashed browser message
 
-s = 30 #time to wait for a single component on the page to appear, in seconds; increase it if you get server-side errors «try again later»
+s = 60 #time to wait for a single component on the page to appear, in seconds; increase it if you get server-side errors «try again later»
 
 driver = webdriver.Edge(service=my_service, options=options)
 action = ActionChains(driver)
@@ -35,6 +35,7 @@ resume_stats_page = "https:/hh.ru/applicant/resumes"
 
 def login():
     driver.get(login_page)
+    time.sleep(10)
     wait.until(EC.element_to_be_clickable((By.NAME, 'login'))).send_keys(username)
 
     show_more_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@data-qa='expand-login-by-password']")))
@@ -70,7 +71,6 @@ def resume_raise():
            
 def main():
     login()
-    time.sleep(10)
     driver.get(resume_stats_page)
     time.sleep(10)
     # scroll_to_bottom()
