@@ -31,7 +31,7 @@ jobs:
 
       - name: execute py script # run the run.py to get the latest data
         run: |
-          python ./hh-ru-raise-bot/bot/raise.py
+          python /bot/raise.py
         env:
           login: ${{ secrets.LOGIN }}
           key: ${{ secrets.KEY }} # if run.py requires passwords..etc, set it as secrets
