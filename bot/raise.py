@@ -27,8 +27,8 @@ driver = webdriver.Edge(service=my_service, options=options)
 action = ActionChains(driver)
 wait = WebDriverWait(driver,s)
    
-username = os.environ.get('secrets.LOGIN')
-password = os.environ.get('secrets.KEY')
+username = os.environ.get('LOGIN')
+password = os.environ.get('KEY')
 
 login_page = "https://hh.ru/account/login"
 resume_stats_page = "https:/hh.ru/applicant/resumes"
