@@ -17,9 +17,9 @@ options.add_argument('headless') # that is, run in the command line only, server
 # options.add_argument("start-maximized")
 my_service=service.Service(r'msedgedriver.exe')
 options.page_load_strategy = 'eager' #do not wait for images to load
-# options.add_experimental_option("detach", True)
+options.add_experimental_option("detach", True)
 # options.add_argument('--no-sandbox')
-#options.add_argument('--disable-dev-shm-usage') # uses disk instead of RAM, may be slow, use it if You receive "driver Run out of memory" crashed browser message
+# options.add_argument('--disable-dev-shm-usage') # uses disk instead of RAM, may be slow, use it if You receive "driver Run out of memory" crashed browser message
 
 s = 60 #time to wait for a single component on the page to appear, in seconds; increase it if you get server-side errors «try again later»
 
@@ -46,19 +46,19 @@ def login():
     login_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@data-qa='account-login-submit']")))
     driver.execute_script('arguments[0].click()', login_button)
     
-# def scroll_to_bottom(): 
-#     reached_page_end= False
-#     last_height = driver.execute_script("return document.body.scrollHeight")
+def scroll_to_bottom(): 
+    reached_page_end= False
+    last_height = driver.execute_script("return document.body.scrollHeight")
     
-#     #expand the skills list:
-#     while not reached_page_end:
-#         driver.execute_script("window.scrollTo(0,document.body.scrollHeight);")
-#         time.sleep(2)
-#         new_height = driver.execute_script("return document.body.scrollHeight")
-#         if last_height == new_height:
-#             reached_page_end = True
-#         else:
-#             last_height = new_height
+    #expand the skills list:
+    while not reached_page_end:
+        driver.execute_script("window.scrollTo(0,document.body.scrollHeight);")
+        time.sleep(2)
+        new_height = driver.execute_script("return document.body.scrollHeight")
+        if last_height == new_height:
+            reached_page_end = True
+        else:
+            last_height = new_height
 
 def resume_raise():
     try:
@@ -73,7 +73,7 @@ def main():
     login()
     driver.get(resume_stats_page)
     time.sleep(10)
-    # scroll_to_bottom()
+    scroll_to_bottom()
     resume_raise()
 
     os.system("cls") #clear screen from unnecessary logs since the operation has completed successfully
