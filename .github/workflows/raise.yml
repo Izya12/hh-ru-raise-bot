@@ -33,7 +33,10 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install selenium
+      
+      - name: Raise the resume
+        run:
           python ./bot/raise.py
         env:
-          login: ${{ secrets.LOGIN }}
-          key: ${{ secrets.KEY }} # if run.py requires passwords..etc, set it as secrets
+          LOGIN: ${{ secrets.LOGIN }}
+          KEY: ${{ secrets.KEY }} # if run.py requires passwords..etc, set it as secrets
