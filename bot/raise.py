@@ -31,11 +31,10 @@ username = os.environ.get('LOGIN')
 password = os.environ.get('KEY')
 
 login_page = "https://hh.ru/account/login"
-resume_stats_page = "https:/hh.ru/applicant/resumes"
+resume_stats_page = "https://hh.ru/applicant/resumes"
 
 def login():
     driver.get(login_page)
-    time.sleep(10)
     wait.until(EC.element_to_be_clickable((By.NAME, 'login'))).send_keys(username)
 
     show_more_button = wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@data-qa='expand-login-by-password']")))
@@ -62,22 +61,27 @@ def scroll_to_bottom():
 
 def resume_raise():
     try:
-        raise_button= wait.until(EC.element_to_be_clickable((By.XPATH, "//button[@data-qa='resume-update-button']")))
+        raise_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[@data-qa="resume-update-button_actions"]//span[contains(., "Поднять в поиске")]/parent::button')))
         action.move_to_element(raise_button).perform()
-        time.sleep(3)
+        time.sleep(0.5)
         action.click(raise_button).perform() 
+        time.sleep(3)
+        success_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[@data-qa="resume-update-button_actions"]//span[contains(., "Поднимать автоматически")]/parent::button')))
+        if(success_button): return "success"
     except:
         return 1
            
 def main():
     login()
+    time.sleep(5)
     driver.get(resume_stats_page)
-    time.sleep(10)
+    time.sleep(5)
     scroll_to_bottom()
-    resume_raise()
 
-    os.system("cls") #clear screen from unnecessary logs since the operation has completed successfully
-    print("Your resume is raised in the list on the hh.ru! \n \nSincerely Yours, \nNAKIGOE.ORG\n")
+    if (resume_raise() == "success"): 
+        print("Your resume is raised in the list on the hh.ru! \n \nSincerely Yours, \nNAKIGOE.ORG\n")
+    else:
+        print("Something went wrong, hh.ru HTML might have been updated, so please update button selectors in the RAISE.PY code.\n")
     driver.close()
     driver.quit()
 main()
