@@ -3,7 +3,7 @@ A Python Selenium & GitHub Actions bot that automatically raises Your resume in 
 
 ## Usage
 1) Clone
-2) Create Your own secret keys for GitHub Actions: LOGIN and KEY
+2) Create Your own secret keys for GitHub Actions to login into HH.RU: LOGIN and KEY
 
 Everything is mission ready: Your resume will be raised every four hours on hh.ru automatically! 
 
