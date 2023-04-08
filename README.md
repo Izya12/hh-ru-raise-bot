@@ -1,4 +1,4 @@
-# HH.RU Automatically raise Your resume!
+# Automatically Raise Your Resume on HH.RU!
 A Python Selenium & GitHub Actions bot that automatically raises Your resume in the list on hh.ru
 
 ## Usage
