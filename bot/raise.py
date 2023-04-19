@@ -66,7 +66,7 @@ def resume_raise():
         time.sleep(0.5)
         action.click(raise_button).perform() 
         time.sleep(3)
-        success_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[@data-qa="resume-update-button_actions"]//span[contains(., "Поднимать автоматически")]/parent::button')))
+        success_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[contains(., "Поднимать автоматически")]')))
         if(success_button): return "success"
     except:
         return 1
