@@ -61,12 +61,14 @@ def scroll_to_bottom():
 
 def resume_raise():
     try:
-        raise_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[@data-qa="resume-update-button_actions"]//span[contains(., "Поднять в поиске")]/parent::button')))
+        raise_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[contains(., "Поднять в поиске")]')))
+        # raise_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[@data-qa="resume-update-button_actions"]//span[contains(., "Поднять в поиске")]/parent::button')))
         action.move_to_element(raise_button).perform()
         time.sleep(0.5)
         action.click(raise_button).perform() 
         time.sleep(3)
-        success_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[@data-qa="resume-update-button_actions"]//span[contains(., "Поднимать автоматически")]/parent::button')))
+        success_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[contains(., "Поднимать автоматически")]')))
+        # success_button = wait.until(EC.element_to_be_clickable((By.XPATH, '//button[@data-qa="resume-update-button_actions"]//span[contains(., "Поднимать автоматически")]/parent::button')))
         if(success_button): return "success"
     except:
         return 1
