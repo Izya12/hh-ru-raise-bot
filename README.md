@@ -65,7 +65,6 @@ jobs:
 
 <p>To quickly find `GitHub Actions Secrets` page, You can use the link:
 <br> <em>github.com/`your-login`/`your-repository-name`/settings/secrets/actions/new</em>
-
 <br> (change `your-login` and `your-repository-name`).</p>
 
 ![Create LOGIN and KEY Secrets for GitHub Actions](https://github.com/nakigoe/hh-ru-raise-bot/blob/main/github-secrets.png)
@@ -87,8 +86,8 @@ Add stars to the pepositories!!!
 2) создайте Ваши собственные ключи (secrets) уже Вашем репозитории в разделе GitHub Actions: LOGIN и KEY (Ваш логин и пароль к hh.ru) 
 
 <p>Чтобы быстро найти страницу создания нового ключа GitHub Actions, Вы можете перейти по сноске:
-<br> <em>github.com/ваш&#8209;ник/название&#8209;репозитория/settings/secrets/actions/new</em>
-<br> (внесите соответствующие изменения: ваш ник и название репозитория).</p>
+<br> <em>github.com/`ваш&#8209;ник`/`название&#8209;репозитория`/settings/secrets/actions/new</em>
+<br> (внесите соответствующие изменения: `ваш ник` и `название репозитория`).</p>
 
 ![создание секретных ключей LOGIN и KEY для GitHub Actions](https://github.com/nakigoe/hh-ru-raise-bot/blob/main/github-secrets.png)
 
