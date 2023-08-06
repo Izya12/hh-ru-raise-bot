@@ -71,7 +71,7 @@ Everything is mission ready: Your resume will be raised every four hours on hh.r
 <br> <em class="ocean-italic">«generate new token (classic)»</em>
 <br> и создайте токен с правами доступа <strong>repo</strong> (поставить первую общую галочку, выделяющую первую секцию списка), скриншот&nbsp;1:</p>
 <div style="max-width: 1366px; margin: 0 auto;">
-<img class="full" src="_IMG/github-repo-token.png"
+<img class="full" src="https://nakigoe.org/_IMG/github-repo-token.png"
   width="1366"
   height="768"
   alt="Создание классического ключа доступа к репозиторию GitHub">
@@ -87,7 +87,7 @@ Everything is mission ready: Your resume will be raised every four hours on hh.r
 <br> <code>LOGIN: ${{ secrets.LOGIN }}</code>
 <br> и сохраните в секретном ключе GitHub Actions сгенерированный токен удалённого доступа к репозиторию из пункта (1), смотрите ниже скриншот&nbsp;2:</p>
 <div style="max-width: 1366px; margin: 0 auto;">
-<img class="full" src="_IMG/github-repo-access.png"
+<img class="full" src="https://nakigoe.org/_IMG/github-repo-access.png"
   width="1366"
   height="768"
   alt="Создание классического ключа доступа к репозиторию GitHub">
