@@ -1,7 +1,10 @@
-# Automatically Raise Your Resume on HH.RU!
+<kbd style="width: 2em; height: 2em;"><a href="#en">ENGLISH</a></kbd> | <kbd><a href="#ru">РУССКИЙ</a></kbd>
+
+<h1 name="en" id="en">Automatically Raise Your Resume on HH.RU!</h1>
+
 A Python Selenium & GitHub Actions bot that automatically raises Your resume in the list on hh.ru
 
-## GitHub Actions 
+## GitHub Actions Contents
 
 github.com/nakigoe/hh-ru-raise-bot/.github/workflows/raise.yml
 ```
@@ -60,9 +63,23 @@ jobs:
 1) Clone the repository
 2) Create Your own secret keys for GitHub Actions to login into HH.RU: LOGIN and KEY
 
+<p>To quickly find `GitHub Actions Secrets` page, You can use the link:
+<br> <em>github.com/`your-login`/`your-repository-name`/settings/secrets/actions/new</em>
+
+<br> (change `your-login` and `your-repository-name`).</p>
+
+![Create LOGIN and KEY Secrets for GitHub Actions](https://github.com/nakigoe/hh-ru-raise-bot/blob/main/github-secrets.png)
+
+You have to create TWO keys, LOGIN и KEY, with the contents of Your login and password to hh.ru.
+
+
 Everything is mission ready: Your resume will be raised every four hours on hh.ru automatically! 
 
-# HH.RU автоматическое поднятие резюме в списке каждые четыре часа
+Add stars!!! 
+
+<hr>
+<h1 name="ru" id="ru">HH.RU автоматическое поднятие резюме в списке каждые четыре часа</h1>
+
 Бот на Python Selenium и GitHub Actions, автоматически поднимает Ваше резюме в списке на hh.ru
 
 Всё настроено для использования бота на GitHub:
