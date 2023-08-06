@@ -1,12 +1,15 @@
 # Automatically Raise Your Resume on HH.RU!
 A Python Selenium & GitHub Actions bot that automatically raises Your resume in the list on hh.ru
 
-## GitHub Actions github.com/nakigoe/hh-ru-raise-bot/.github/workflows/raise.yml
+## GitHub Actions 
+
+github.com/nakigoe/hh-ru-raise-bot/.github/workflows/raise.yml
 ```
 name: Run Python Selenium headless script to raise a resume in the list on hh.ru
 
 # Controls when the workflow will run
 on:
+
   # Triggers the workflow on push or pull request events but only for the "main" branch
   schedule:
     - cron: '0 0 * * *'
@@ -22,8 +25,10 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+
   # This workflow contains a single job called "build"
   build:
+
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -64,38 +69,10 @@ Everything is mission ready: Your resume will be raised every four hours on hh.r
 1) клонируйте репозиторий; 
 2) создайте Ваши собственные ключи (secrets) уже Вашем репозитории в разделе GitHub Actions: LOGIN и KEY (Ваш логин и пароль к hh.ru) 
 
-<h4 id="github-actions-token">2.5.2 Создание токена удалённого доступа к репозиторию GitHub</h4>
-<p>В настройках репозитория на GitHub создайте <em>токен удалённого доступа</em> к репозиторию, комментарий к нему можно выбрать любой, но лучше включить в комментарий название репозитория, так как этих ключей становится несколько, если Вы всерьёз работаете с платформой GitHub.</p>
-<p><a class="link" href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a> перейдите по ссылке и выберите в меню
-<br> <em>«создать новый токен (классический)»</em>
-<br> <em class="ocean-italic">«generate new token (classic)»</em>
-<br> и создайте токен с правами доступа <strong>repo</strong> (поставить первую общую галочку, выделяющую первую секцию списка), скриншот&nbsp;1:</p>
-<div style="max-width: 1366px; margin: 0 auto;">
-<img class="full" src="https://nakigoe.org/_IMG/github-repo-token.png"
-  width="1366"
-  height="768"
-  alt="Создание классического ключа доступа к репозиторию GitHub">
-</div>
-<p class="wrapper">Скриншот 1 Создание классического ключа доступа к репозиторию GitHub по адресу
-<br> <a class="link" href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a></p>
-
-<h4 id="github-actions-access">Внесение токена удалённого доступа в Github&nbsp;Actions</h4>
 <p>Чтобы быстро найти страницу создания нового ключа GitHub Actions, Вы можете перейти по сноске:
 <br> <em>github.com/ваш&#8209;ник/название&#8209;репозитория/settings/secrets/actions/new</em>
 <br> (внесите соответствующие изменения: ваш ник и название репозитория).</p>
-<p>В настройках GitHub Actions для репозитория создайте новый <em>секретный&nbsp;ключ,</em> назовите его LOGIN (убедитесь, что название ключа точно такое же, как Вы указали в файле <em>raise.yml</em>):
-<br> <code>LOGIN: ${{ secrets.LOGIN }}</code>
-<br> и сохраните в секретном ключе GitHub Actions сгенерированный токен удалённого доступа к репозиторию из пункта (1), смотрите ниже скриншот&nbsp;2:</p>
-<div style="max-width: 1366px; margin: 0 auto;">
-<img class="full" src="https://nakigoe.org/_IMG/github-repo-access.png"
-  width="1366"
-  height="768"
-  alt="Создание классического ключа доступа к репозиторию GitHub">
-</div>
- 
-<p class="wrapper">Скриншот 2 Подключение микро&#8209;сервера GitHub&nbsp;Actions к коду репозитория GitHub при помощи ранее сгенерированного ключа доступа к репозиторию (смотри Скриншот&nbsp;1), ключ доступа для GitHub&nbsp;Actions к репозиторию прописывается по сноске<br> <em>github.com/ваш-ник/название-репозитория/settings/secrets/actions/new</em></p>
-<p>Этот ключ (secret) позволяет микро-серверу GitHub Actions считывать код сайта из репозитория GitHub для установки Python, библиотек Selenium, публикации, компрессии и запуска скрипта Python прямо на микросервере GitHub&nbsp;Actions!</p>
-
+![создание секретных ключей LOGIN и KEY для GitHub Actions](github-secrets.png "создание секретных ключей LOGIN и KEY для GitHub Actions")
 Вам необходимо создать ДВА ключа, LOGIN и KEY, содержание — Ваш логин и пароль к hh.ru.
 Всё готово: бот запускается автоматически каждые четыре часа.
 
