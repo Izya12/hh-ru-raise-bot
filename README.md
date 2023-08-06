@@ -72,7 +72,7 @@ Everything is mission ready: Your resume will be raised every four hours on hh.r
 <p>Чтобы быстро найти страницу создания нового ключа GitHub Actions, Вы можете перейти по сноске:
 <br> <em>github.com/ваш&#8209;ник/название&#8209;репозитория/settings/secrets/actions/new</em>
 <br> (внесите соответствующие изменения: ваш ник и название репозитория).</p>
-![создание секретных ключей LOGIN и KEY для GitHub Actions](github-secrets.png "создание секретных ключей LOGIN и KEY для GitHub Actions")
+![создание секретных ключей LOGIN и KEY для GitHub Actions](https://nakigoe/hh-raise-bot/github-secrets.png "создание секретных ключей LOGIN и KEY для GitHub Actions")
 Вам необходимо создать ДВА ключа, LOGIN и KEY, содержание — Ваш логин и пароль к hh.ru.
 Всё готово: бот запускается автоматически каждые четыре часа.
 
