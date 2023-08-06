@@ -76,7 +76,8 @@ Everything is mission ready: Your resume will be raised every four hours on hh.r
 ![создание секретных ключей LOGIN и KEY для GitHub Actions](https://github.com/nakigoe/hh-ru-raise-bot/blob/main/github-secrets.png)
 
 Вам необходимо создать ДВА ключа, LOGIN и KEY, содержание — Ваш логин и пароль к hh.ru.
-Всё готово: бот запускается автоматически каждые четыре часа.
+
+Всё готово: бот запускается автоматически каждые четыре часа. Ставьте звёзды, пожалуйста!
 
 <br> Пишите, если Вы хотите получить уроки создания вебсайтов: nakigoetenshi@gmail.com
 <br> 1000 рублей 2 часа один урок
