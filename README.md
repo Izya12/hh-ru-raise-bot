@@ -23,7 +23,7 @@ You have to create TWO keys, LOGIN и KEY, with the contents of Your login and p
 
 Everything is mission ready: Your resume will be raised every four hours on hh.ru automatically!
 
-Add stars to the pepositories!!!
+Add stars to the repositories!!!
 
 <hr>
 <h1 name="ru" id="ru">HH.RU автоматическое поднятие резюме в списке каждые четыре часа</h1>
