@@ -4,64 +4,14 @@
 
 A Python Selenium & GitHub Actions bot that automatically raises Your resume in the list on hh.ru
 
-## GitHub Actions Contents
+## Read GitHub Actions Contents
 
-github.com/nakigoe/hh-ru-raise-bot/.github/workflows/raise.yml
-```
-name: Run Python Selenium headless script to raise a resume in the list on hh.ru
-
-# Controls when the workflow will run
-on:
-
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  schedule:
-    - cron: '0 0 * * *'
-    - cron: '5 4 * * *'
-    - cron: '10 8 * * *'
-    - cron: '15 12 * * *'
-    - cron: '20 16 * * *'
-    - cron: '25 20 * * *'
-    - cron: "0 */4 * * *"
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-
-  # This workflow contains a single job called "build"
-  build:
-
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      
-      # Install Python
-      - name: setup python
-        uses: actions/setup-python@v3
-        with:
-          python-version: 3.x #install the python needed
-
-      - name: execute py script # run the run.py to get the latest data
-        run: |
-          pip install --upgrade pip
-          pip install selenium
-      
-      - name: Raise the resume
-        run:
-          python ./bot/raise.py
-        env:
-          LOGIN: ${{ secrets.LOGIN }}
-          KEY: ${{ secrets.KEY }} 
-```
+https://github.com/nakigoe/hh-ru-raise-bot/blob/main/.github/workflows/raise.yml
 
 ## Usage
-1) Clone the repository
-2) Create Your own secret keys for GitHub Actions to login into HH.RU: LOGIN and KEY
+
+1. Clone the repository
+2. Create Your own secret keys for GitHub Actions to login into HH.RU: LOGIN and KEY
 
 <p>To quickly find <em>GitHub Actions Secrets</em> page, You can use the link:
 <br> <em>github.com/<code>your-login</code>/<code>your-repository-name</code>/settings/secrets/actions/new</em>
@@ -71,19 +21,23 @@ jobs:
 
 You have to create TWO keys, LOGIN и KEY, with the contents of Your login and password to hh.ru.
 
+Everything is mission ready: Your resume will be raised every four hours on hh.ru automatically!
 
-Everything is mission ready: Your resume will be raised every four hours on hh.ru automatically! 
-
-Add stars to the pepositories!!! 
+Add stars to the pepositories!!!
 
 <hr>
 <h1 name="ru" id="ru">HH.RU автоматическое поднятие резюме в списке каждые четыре часа</h1>
 
 Бот на Python Selenium и GitHub Actions, автоматически поднимает Ваше резюме в списке на hh.ru
 
+## Прочитайте содержание файла GitHub&nbsp;Actions
+
+https://github.com/nakigoe/hh-ru-raise-bot/blob/main/.github/workflows/raise.yml
+
 Всё настроено для использования бота на GitHub:
-1) клонируйте репозиторий; 
-2) создайте Ваши собственные ключи (secrets) уже Вашем репозитории в разделе GitHub Actions: LOGIN и KEY (Ваш логин и пароль к hh.ru) 
+
+1. клонируйте репозиторий;
+2. создайте Ваши собственные ключи (secrets) уже Вашем репозитории в разделе GitHub Actions: LOGIN и KEY (Ваш логин и пароль к hh.ru)
 
 <p>Чтобы быстро найти страницу <em>создания нового секретного ключа GitHub Actions,</em> Вы можете перейти по сноске:
 <br> <em>github.com/<code>ваш&#8209;ник</code>/<code>название&#8209;репозитория</code>/settings/secrets/actions/new</em>
