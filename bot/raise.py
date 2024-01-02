@@ -23,7 +23,7 @@ options.add_experimental_option("detach", True)
 
 s = 60 #time to wait for a single component on the page to appear, in seconds; increase it if you get server-side errors «try again later»
 
-driver = webdriver.Edge(service=my_service, options=options)
+driver = webdriver.Edge(options=options)
 action = ActionChains(driver)
 wait = WebDriverWait(driver,s)
    
